@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="torneo">
+<head>
+    <title>Gestione torneo</title>
+    <script src="JS/angular.js"></script>
+    <link href="CSS/bootstrap.css" rel="stylesheet" />
+    <link href="CSS/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        angular.module("torneo", ["customFilters"]);
+    </script>
+    <script src="controllers/torneoController.js"></script>
+    <script src="filters/customFilters.js"></script>
+    <script src="controllers/tavoliController.js"></script>
+</head>
+<body ng-controller="torneoCtrl">
+    <div class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">TORNEO</a>
+    </div>
+    <div class="panel panel-default row" ng-controller="tavoliCtrl">
+        <div class="col-xs-3">
+             <a ng-repeat="item in data.partite | orderBy:'tavolo' | unique:'tavolo'"
+                ng-click="selectTable(item)" class="btn btn-block btn-default btn-lg">
+                    Tavolo {{item}}
+             </a>
+        </div>
+        <div class="col-xs-8">
+            <div class="well" ng-repeat="item in data.partite | filter:selectTableFilterFn">
+                <h3>{{item.partita}}</h3>
+                <strong>{{item.tavolo}}</strong>
+                <p>{{item.giocatore}}</p>
+                <p>{{item.punti}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
