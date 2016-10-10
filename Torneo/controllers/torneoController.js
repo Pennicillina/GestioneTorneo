@@ -10,7 +10,11 @@ angular.module("torneo")
 		{ partita: 1, tavolo: 2, giocatore: "Matteo", punti: 56, conclusa: true },
 		{ partita: 1, tavolo: 2, giocatore: "Ivo", punti: 32, conclusa: true},
 		{ partita: 1, tavolo: 2, giocatore: "Ludo", punti: 1, conclusa: true},
-		{ partita: 1, tavolo: 2, giocatore: "Beppe", punti: 17, conclusa: true}],
+		{ partita: 1, tavolo: 2, giocatore: "Beppe", punti: 17, conclusa: true},
+		{ partita: 2, tavolo: 2, giocatore: "Matteo", punti: 6, conclusa: true },
+		{ partita: 2, tavolo: 2, giocatore: "Ivo", punti: 22, conclusa: true},
+		{ partita: 2, tavolo: 2, giocatore: "Ludo", punti: 71, conclusa: true},
+		{ partita: 2, tavolo: 2, giocatore: "Beppe", punti: 57, conclusa: true}],
 
 		classifica: [
 		{ giocatore: "Matteo", punteggio: 0 },

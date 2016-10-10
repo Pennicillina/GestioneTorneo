@@ -18,18 +18,25 @@
     </div>
     <div class="panel panel-default row" ng-controller="tavoliCtrl">
         <div class="col-xs-3">
-             <a ng-repeat="item in data.partite | orderBy:'tavolo' | unique:'tavolo'"
-                ng-click="selectTable(item)" class="btn btn-block btn-default btn-lg">
-                    Tavolo {{item}}
+             <a ng-repeat="item in data.partite | orderBy:'partita' | unique:'partita'"
+                ng-click="selectGame(item)" class="btn btn-block btn-default btn-lg">
+                    Partita {{item}}
              </a>
         </div>
         <div class="col-xs-8">
-            <div class="well" ng-repeat="item in data.partite | filter:selectTableFilterFn">
-                <h3>{{item.partita}}</h3>
-                <strong>{{item.tavolo}}</strong>
-                <p>{{item.giocatore}}</p>
-                <p>{{item.punti}}</p>
-            </div>
+            <a ng-repeat="item in data.partite | filter:selectGameFilterFn | unique:'tavolo'"
+                ng-click="selectTable(item)" class="btn btn-block btn-default btn-lg">
+                    Tavolo {{item}}
+            </a>
+
+            <table class="table table-striped">
+                <tbody>
+                    <tr ng-repeat="item in data.partite | filter:selectCurrentFilterFn">
+                        <td>{{item.giocatore}}</td>
+                        <td>{{item.punti}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
