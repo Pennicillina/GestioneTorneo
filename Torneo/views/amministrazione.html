@@ -1,6 +1,6 @@
 <h2>Amministrazione</h2>
 
-<div class="panel panel-default row">
+<div class="panel panel-default row" ng-controller="adminCtrl">
 	<div class="col-xs-8">
 		<table class="table table-striped">
 			<tbody>
@@ -12,7 +12,33 @@
 					<td>Numero tavoli</td>
 					<td><input type="textbox" ng-model="data.tavoli" class="text text-right" /></td>
 				</tr>
+				<tr>
+					<td>Nuovo giocatore</td>
+					<td><input type="textbox" ng-model="data.nome"></td>
+					<td>
+						<button ng-click="addPlayer(data.nome)" ng-show="data.nome" class="btn btn-sm btn-primary">
+							Aggiungi giocatore
+						</button>
+					</td>
+				</tr>
 			</tbody>
+		</table>		
+	</div>
+
+	<div class="col-xs-8">
+		<table class="table table-striped">
+			<tbody>
+				<tr ng-repeat="item in data.classifica">
+					<td>{{item.giocatore}}</td>
+					<td>{{item.punteggio}}</td>
+					<td>
+						<button ng-click="removePlayer(item)" class="btn btn-sm btn-primary">
+							Rimuovi 		
+						</button>
+					</td>
+				</tr>
+			</tbody>			
 		</table>
 	</div>
+
 </div>

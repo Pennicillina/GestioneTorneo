@@ -24,7 +24,9 @@ angular.module("torneo")
 
 		match: 4,
 
-		tavoli: 4
+		tavoli: 4,
+
+		nome: "" 
 	};
 
 	function HeaderController($scope, $location) 
