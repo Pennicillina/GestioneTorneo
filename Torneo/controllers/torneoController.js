@@ -1,5 +1,5 @@
 angular.module("torneo")
-.controller("torneoCtrl", function ($scope) {
+	.controller("torneoCtrl", function ($scope) {
 
     $scope.data = {
     	partite: [

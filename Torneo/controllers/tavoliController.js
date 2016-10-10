@@ -1,5 +1,6 @@
 angular.module("torneo")
-	.controller("tavoliCtrl", function ($scope, $filter) {
+	.constant("activeObjectClass", "btn-primary")
+	.controller("tavoliCtrl", function ($scope, $filter, activeObjectClass) {
 
 		var selectedTable = null;
 		var selectedGame = null;
@@ -22,5 +23,13 @@ angular.module("torneo")
 
 		$scope.selectCurrentFilterFn = function (partita) {
 			return partita.tavolo == selectedTable && partita.partita == selectedGame;
+		}
+
+		$scope.getActiveTable = function (category) {
+			return selectedTable == category ? activeObjectClass : "";
+		}
+
+		$scope.getActiveGame = function (category) {
+			return selectedGame == category ? activeObjectClass : "";
 		}
 	});
