@@ -6,42 +6,46 @@
     <link href="CSS/bootstrap.css" rel="stylesheet" />
     <link href="CSS/bootstrap-theme.css" rel="stylesheet" />
     <script>
-        angular.module("torneo", ["customFilters"]);
+        angular.module("torneo", ["customFilters", "ngRoute"])
+            .config(function ($routeProvider) {
+
+                $routeProvider.when("/partite", {
+                    templateUrl: "views/partiteList.html"
+                });
+
+                $routeProvider.when("/classifica", {
+                    templateUrl: "views/classifica.html"
+                });
+
+                $routeProvider.when("/amministrazione", {
+                    templateUrl: "views/amministrazione.html"
+                });
+
+                $routeProvider.otherwise({
+                    templateUrl: "views/partiteList.html"
+                });
+            });
     </script>
     <script src="controllers/torneoController.js"></script>
     <script src="filters/customFilters.js"></script>
     <script src="controllers/tavoliController.js"></script>
+    <script src="JS/angular-route.js"></script>
 </head>
 <body ng-controller="torneoCtrl">
-    <div class="navbar navbar-inverse">
-        <a class="navbar-brand" href="#">TORNEO</a>
-    </div>
-    <div class="panel panel-default row" ng-controller="tavoliCtrl">
-        <div class="col-xs-3">
-             <a ng-repeat="item in data.partite | orderBy:'partita' | unique:'partita'"
-                ng-click="selectGame(item)" class="btn btn-block btn-default btn-lg"
-                ng-class="getActiveGame(item)">
-                    Partita {{item}}
-             </a>
-        </div>
-        <div class="col-xs-8">
-            <a ng-repeat="item in data.partite | filter:selectGameFilterFn | unique:'tavolo'"
-                ng-click="selectTable(item)" class="btn btn-block btn-default btn-lg"
-                ng-class="getActiveTable(item)">
-                    Tavolo {{item}}
-            </a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">TORNEO</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li ng-class="{ active: isActive('/classifica')}"><a href="#/classifica">Classifica</a></li>
+              <li ng-class="{ active: isActive('/partite')}"><a href="#/partite">Partite</a></li>
+              <li ng-class="{ active: isActive('/partite')}"><a href="#/amministrazione">Amministrazione</a></li> 
+            </ul>
+        </div>        
+    </nav>
+    
+    <ng-view />
 
-            <table class="table table-striped">
-                <tbody>
-                    <tr ng-repeat="item in data.partite | filter:selectCurrentFilterFn">
-                        <td>{{item.giocatore}}</td>
-                        <td><input type="text" ng-model="item.punti" class="text text-right" 
-                            ng-disabled="item.conclusa"/></td>
-                        <td><input type="checkbox" ng-model="item.conclusa" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 </body>
 </html>

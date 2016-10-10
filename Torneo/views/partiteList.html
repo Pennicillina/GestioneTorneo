@@ -1,0 +1,27 @@
+<div class="panel panel-default row" ng-controller="tavoliCtrl">
+        <div class="col-xs-3">
+             <a ng-repeat="item in data.partite | orderBy:'partita' | unique:'partita'"
+                ng-click="selectGame(item)" class="btn btn-block btn-default btn-lg"
+                ng-class="getActiveGame(item)">
+                    Partita {{item}}
+             </a>
+        </div>
+        <div class="col-xs-8">
+            <a ng-repeat="item in data.partite | filter:selectGameFilterFn | unique:'tavolo'"
+                ng-click="selectTable(item)" class="btn btn-block btn-default btn-lg"
+                ng-class="getActiveTable(item)">
+                    Tavolo {{item}}
+            </a>
+
+            <table class="table table-striped">
+                <tbody>
+                    <tr ng-repeat="item in data.partite | filter:selectCurrentFilterFn">
+                        <td>{{item.giocatore}}</td>
+                        <td><input type="text" ng-model="item.punti" class="text text-right" 
+                            ng-disabled="item.conclusa"/></td>
+                        <td><input type="checkbox" ng-model="item.conclusa" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
