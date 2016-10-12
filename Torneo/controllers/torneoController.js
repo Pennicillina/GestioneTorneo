@@ -2,7 +2,7 @@ angular.module("torneo")
 	.controller("torneoCtrl", function ($scope) {
 
     $scope.data = {
-    	partite: [
+    	partito: [
         { partita: 1, tavolo: 1, giocatore: "Matteo", punti: 23, conclusa: false },
 		{ partita: 1, tavolo: 1, giocatore: "Ivo", punti: 34, conclusa: false },
 		{ partita: 1, tavolo: 1, giocatore: "Ludo", punti: 18, conclusa: false },
@@ -16,8 +16,10 @@ angular.module("torneo")
 		{ partita: 2, tavolo: 2, giocatore: "Ludo", punti: 71, conclusa: false},
 		{ partita: 2, tavolo: 2, giocatore: "Beppe", punti: 57, conclusa: true}],
 
+		partite: [],
+
 		classifica: [
-		{ giocatore: "Matteo", punteggio: 0 },
+		{ giocatore: "Matteo", punteggio: 0},
 		{ giocatore: "Ivo", punteggio: 0 },
 		{ giocatore: "Ludo", punteggio: 0 },
 		{ giocatore: "Beppe", punteggio: 0 }],
@@ -26,7 +28,9 @@ angular.module("torneo")
 
 		tavoli: 4,
 
-		nome: "" 
+		nome: "",
+
+		activeGame: 1 
 	};
 
 	function HeaderController($scope, $location) 
@@ -34,6 +38,14 @@ angular.module("torneo")
     	$scope.isActive = function (viewLocation) { 
         	return viewLocation === $location.path();
     	};
-	} 
+	};
+
+	$scope.sortedPlayers = $scope.data.classifica.sort(function (a,b) {
+		return b.punteggio - a.punteggio;
+	});
+
+	$scope.sorted = $scope.data.partite.filter( function (obj) {
+		return obj.tavolo == 1;
+	}); 
 
 });

@@ -28,7 +28,7 @@
 	<div class="col-xs-8">
 		<table class="table table-striped">
 			<tbody>
-				<tr ng-repeat="item in data.classifica">
+				<tr ng-repeat="item in sortedPlayers">
 					<td>{{item.giocatore}}</td>
 					<td>{{item.punteggio}}</td>
 					<td>
@@ -39,6 +39,24 @@
 				</tr>
 			</tbody>			
 		</table>
+	</div>
+
+	<div class="col-xs-8">
+		<button ng-click="generateTables(data.activeGame)" class="btn btn-sm btn-primary">
+			Genera tavoli {{data.activeGame}}		
+		</button>
+		<div ng-repeat="item in data.partite">
+			{{item}}
+		</div>
+	</div>
+
+	<div class="col-xs-8">
+		<button ng-click="generateScore(data.activeGame)" class="btn btn-sm btn-primary">
+			Genera punteggio {{data.activeGame}} 		
+		</button>
+		<div ng-repeat="item in sorted">
+			{{item}}
+		</div>
 	</div>
 
 </div>
