@@ -54,7 +54,7 @@
 		<button ng-click="generateScore(data.activeGame)" class="btn btn-sm btn-primary">
 			Genera punteggio {{data.activeGame}} 		
 		</button>
-		<div ng-repeat="item in sorted">
+		<div ng-repeat="item in data.partite">
 			{{item}}
 		</div>
 	</div>
