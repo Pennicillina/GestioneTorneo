@@ -41,22 +41,23 @@
 		</table>
 	</div>
 
-	<div class="col-xs-8">
-		<button ng-click="generateTables(data.activeGame)" class="btn btn-sm btn-primary">
-			Genera tavoli {{data.activeGame}}		
-		</button>
-		<div ng-repeat="item in data.partite">
-			{{item}}
+	<div class="row">
+		<div class="col-xs-8">
+			<button ng-click="generateTables(data.activeGame)" class="btn btn-sm btn-primary">
+				Genera tavoli {{data.activeGame}}		
+			</button>
+			<div ng-repeat="item in data.partite">
+				{{item}}
+			</div>
 		</div>
 	</div>
-
-	<div class="col-xs-8">
-		<button ng-click="generateScore(data.activeGame)" class="btn btn-sm btn-primary">
-			Genera punteggio {{data.activeGame}} 		
-		</button>
-		<div ng-repeat="item in data.partite">
-			{{item}}
+	
+	<div class="row">
+		<div class="col-xs-8">
+			<button ng-click="generateScore(data.activeGame)" class="btn btn-sm btn-primary">
+				Genera punteggio {{data.activeGame}} 		
+			</button>
 		</div>
 	</div>
-
+	
 </div>

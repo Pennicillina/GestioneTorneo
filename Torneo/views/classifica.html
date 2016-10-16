@@ -1,0 +1,14 @@
+<h2>Classifica</h2>
+
+<div class="panel panel-default row" ng-controller="scoreCtrl">
+
+	<table border="1" ng-repeat="table in rankingHeader">
+	  <tr>
+	      <th ng-repeat="column in rankingHeader.cols">{{column}}</th>
+	  </tr>
+	  <tr ng-repeat="row in rankingHeader.rows">
+	    <td ng-repeat="column in rankingHeader.cols">{{row[column]}}</td>
+	  </tr>
+	</table>
+
+</div>

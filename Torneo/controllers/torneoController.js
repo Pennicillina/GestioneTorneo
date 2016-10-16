@@ -2,7 +2,7 @@ angular.module("torneo")
 	.controller("torneoCtrl", function ($scope) {
 
     $scope.data = {
-    	partite: [
+    	partito: [
         { partita: 1, tavolo: 1, giocatore: "Matteo", punti: 23, conclusa: false, score: 0, id: 1 },
 		{ partita: 1, tavolo: 1, giocatore: "Ivo", punti: 34, conclusa: false, score: 0, id: 2 },
 		{ partita: 1, tavolo: 1, giocatore: "Ludo", punti: 18, conclusa: false, score: 0, id: 3 },
@@ -16,13 +16,13 @@ angular.module("torneo")
 		{ partita: 2, tavolo: 2, giocatore: "Ludo", punti: 71, conclusa: false, score: 0, id: 11},
 		{ partita: 2, tavolo: 2, giocatore: "Beppe", punti: 57, conclusa: true, score: 0, id: 12}],
 
-		partito: [],
+		partite: [],
 
 		classifica: [
-		{ giocatore: "Matteo", punteggio: 0},
-		{ giocatore: "Ivo", punteggio: 0 },
-		{ giocatore: "Ludo", punteggio: 0 },
-		{ giocatore: "Beppe", punteggio: 0 }],
+		{ giocatore: "Matteo", punteggio: 100},
+		{ giocatore: "Ivo", punteggio: 20 },
+		{ giocatore: "Ludo", punteggio: 40 },
+		{ giocatore: "Beppe", punteggio: 5 }],
 
 		match: 4,
 
@@ -30,7 +30,9 @@ angular.module("torneo")
 
 		nome: "",
 
-		activeGame: 2 
+		activeGame: 1, 
+
+		lastId : 0
 	};
 
 	function HeaderController($scope, $location) 
