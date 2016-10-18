@@ -1,8 +1,8 @@
-<div class="panel panel-primary row" ng-controller="adminCtrl">
+<div class="panel panel-primary" ng-controller="adminCtrl">
 	<div class="panel-heading">
     	<h3 class="panel-title">Amministrazione</h3>
   	</div>
-	<div class="panel-body">
+	<div >
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="form-group">
@@ -64,7 +64,7 @@
 		</table>
 	</div>
 
-	<div class="row form-control">
+	<div >
 		<div class="col-xs-8">
 			<button ng-click="generateTables(data.activeGame)" class="btn btn-sm btn-primary">
 				Genera tavoli {{data.activeGame}}		
@@ -75,7 +75,7 @@
 		</div>
 	</div>
 	
-	<div class="row form-control">
+	<div >
 		<div class="col-xs-8">
 			<button ng-click="generateScore(data.activeGame)" class="btn btn-sm btn-primary">
 				Genera punteggio {{data.activeGame}} 		

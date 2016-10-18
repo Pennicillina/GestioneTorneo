@@ -1,5 +1,5 @@
-<div class="panel panel-default row" ng-controller="tavoliCtrl">
-        <div class="col-xs-3">
+<div ng-controller="tavoliCtrl">
+        <div class="col-xs-4">
              <a ng-repeat="item in data.partite | orderBy:'partita' | unique:'partita'"
                 ng-click="selectGame(item)" class="btn btn-block btn-default btn-lg"
                 ng-class="getActiveGame(item)">
