@@ -1,18 +1,18 @@
 <div ng-controller="tavoliCtrl">
-        <div class="col-xs-4">
+    <div class="row">
+        <div class="col-sm-4">
              <a ng-repeat="item in data.partite | orderBy:'partita' | unique:'partita'"
                 ng-click="selectGame(item)" class="btn btn-block btn-default btn-lg"
                 ng-class="getActiveGame(item)">
                     Partita {{item}}
              </a>
         </div>
-        <div class="col-xs-8">
+        <div class="col-sm-8">
             <a ng-repeat="item in data.partite | filter:selectGameFilterFn | unique:'tavolo'"
                 ng-click="selectTable(item)" class="btn btn-block btn-default btn-lg"
                 ng-class="getActiveTable(item)">
                     Tavolo {{item}}
-            </a>
-
+            </a> 
             <table class="table table-striped">
                 <tbody>
                     <tr ng-repeat="item in data.partite | filter:selectCurrentFilterFn">
@@ -22,6 +22,8 @@
                         <td><input type="checkbox" ng-model="item.conclusa" /></td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
+            </table>       
+        </div> 
     </div>
+
+            

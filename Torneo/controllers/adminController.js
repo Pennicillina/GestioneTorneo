@@ -91,12 +91,20 @@ angular.module("torneo")
 			storeLocal.setObjectData('classifica', $scope.data.classifica);
 		}
 
+		$scope.saveDataGames = function() {
+			storeLocal.setObjectData('partite', $scope.data.partite);
+		}
+
 		$scope.loadData = function() {
 			$scope.data.classifica = storeLocal.getObjectData('classifica');
 
 			$scope.sortedPlayers = $scope.data.classifica.sort(function (a,b) {
 				return b.punteggio - a.punteggio;
 			});
+		}
+
+		$scope.loadDataGames = function() {
+			$scope.data.classifica = storeLocal.getObjectData('partite');
 		}
 		
 	}); 
