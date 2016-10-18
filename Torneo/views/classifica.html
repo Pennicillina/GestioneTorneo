@@ -2,13 +2,19 @@
 
 <div class="panel panel-default row" ng-controller="scoreCtrl">
 
-	<table border="1" ng-repeat="table in rankingHeader">
-	  <tr>
-	      <th ng-repeat="column in rankingHeader.cols">{{column}}</th>
-	  </tr>
-	  <tr ng-repeat="row in rankingHeader.rows">
-	    <td ng-repeat="column in rankingHeader.cols">{{row[column]}}</td>
-	  </tr>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr class="info">
+				<th>Giocatori</th>
+				<th>Punteggio</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in sortedPlayers">
+				<td>{{item.giocatore}}</td>
+				<td>{{item.punteggio}}</td>
+			</tr>
+		</tbody>			
 	</table>
 
 </div>

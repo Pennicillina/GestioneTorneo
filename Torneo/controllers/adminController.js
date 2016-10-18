@@ -1,5 +1,5 @@
 angular.module("torneo")
-	.controller("adminCtrl", function($scope) {
+	.controller("adminCtrl", function($scope, storeLocal) {
 		
 		$scope.addPlayer = function (name) {
 			$scope.data.classifica.push({ giocatore: name, punteggio: 0});
@@ -85,6 +85,18 @@ angular.module("torneo")
 					}
 				}
 			}
+		}
+
+		$scope.saveData = function() {
+			storeLocal.setObjectData('classifica', $scope.data.classifica);
+		}
+
+		$scope.loadData = function() {
+			$scope.data.classifica = storeLocal.getObjectData('classifica');
+
+			$scope.sortedPlayers = $scope.data.classifica.sort(function (a,b) {
+				return b.punteggio - a.punteggio;
+			});
 		}
 		
 	}); 

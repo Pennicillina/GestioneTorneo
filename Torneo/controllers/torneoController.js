@@ -1,5 +1,5 @@
 angular.module("torneo")
-	.controller("torneoCtrl", function ($scope) {
+	.controller("torneoCtrl", function ($scope, storeLocal) {
 
     $scope.data = {
     	partito: [
@@ -18,11 +18,13 @@ angular.module("torneo")
 
 		partite: [],
 
-		classifica: [
+		classifico: [
 		{ giocatore: "Matteo", punteggio: 100},
 		{ giocatore: "Ivo", punteggio: 20 },
 		{ giocatore: "Ludo", punteggio: 40 },
 		{ giocatore: "Beppe", punteggio: 5 }],
+
+		classifica: [],
 
 		match: 4,
 
