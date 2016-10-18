@@ -2,33 +2,36 @@
 	<div class="panel-heading">
     	<h3 class="panel-title">Amministrazione</h3>
   	</div>
-	<div >
+	<div class="panel-body">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-2">
 				<div class="form-group">
 				  <label for="games">Numero partite:</label>
 				  <input type="text" class="form-control" ng-model="data.match" id="games">
 				</div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-2">
 				<div class="form-group">
 				  <label for="tables">Numero tavoli:</label>
 				  <input type="text" class="form-control" ng-model="data.tavoli" id="tables">
 				</div>
 			</div>
+			<div class="col-sm-4">				
+				<div class="form-group">
+					<label for="new">Nuovo giocatore:</label>
+					<input type="text" class="form-control" ng-model="data.nome" id="new">
+				</div>			
+			</div>
+			<div class="col-sm-4">				
+				<div class="form-group">
+					<button ng-click="addPlayer(data.nome)" ng-show="data.nome" class="btn btn-primary align">
+						Aggiungi 
+					</button>
+				</div>			
+			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-4">				
-				<form class="form-inline">
-					<div class="form-group">
-						<label for="new">Nuovo giocatore:</label>
-						<input type="text" class="form-control" ng-model="data.nome" id="new">
-						<button ng-click="addPlayer(data.nome)" type="submit" ng-show="data.nome" class="btn btn-sm btn-primary">
-							Aggiungi 
-						</button>
-					</div>			
-				</form>
-			</div>
+			
 			<div class="col-sm-4">
 				<div class="col-sm-6">
 					<div class="form-group">
