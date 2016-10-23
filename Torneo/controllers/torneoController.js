@@ -40,7 +40,7 @@ angular.module("torneo")
 	}
 
 	if(storeLocal.getData('activeGame') !== null)  {
-		$scope.data.activeGame = storeLocal.getData('activeGame');
+		$scope.data.activeGame = parseInt(storeLocal.getData('activeGame'));
 	}
 
 	$scope.sortedPlayers = $scope.data.classifica.sort(function (a,b) {
