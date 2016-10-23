@@ -8,6 +8,9 @@ angular.module("torneo")
 			getData: function(name) {
 				return $window.localStorage && $window.localStorage.getItem(name);
 			},
+			deleteData: function(name) {
+				return $window.localStorage && $window.localStorage.removeItem(name);
+			},
 			setObjectData: function(name, val) {
 				$window.localStorage && $window.localStorage.setItem(name, JSON.stringify(val));
 				return this;

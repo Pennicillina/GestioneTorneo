@@ -26,7 +26,7 @@
 				</div>
 				<div class="col-sm-4">				
 					<div class="form-group">
-						<button ng-click="addPlayer(data.nome)" ng-show="data.nome" class="btn btn-primary align">
+						<button ng-click="addPlayer(data.nome)" ng-disabled="!data.nome" class="btn btn-primary align">
 							Aggiungi 
 						</button>
 					</div>			
@@ -38,11 +38,18 @@
 					<div class="col-sm-3">
 						<div class="form-group">
 						  	<button ng-click="saveData()" class="btn btn-primary">
-								Salva dati classifica
+								Salva dati
 							</button>
 						</div>
 					</div>
 					<div class="col-sm-3">
+						<div class="form-group">
+						  	<button ng-click="removeData()" class="btn btn-primary">
+								Elimina dati
+							</button>
+						</div>
+					</div>
+					<!-- <div class="col-sm-3">
 						<div class="form-group">
 						  	<button ng-click="loadData()" class="btn btn-primary">
 								Carica dati classifica
@@ -52,7 +59,7 @@
 					<div class="col-sm-3">
 						<div class="form-group">
 						  	<button ng-click="saveDataGames()" class="btn btn-primary">
-								Salva dati classifica
+								Salva dati Partite
 							</button>
 						</div>
 					</div>
@@ -62,7 +69,7 @@
 								Carica dati partite
 							</button>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

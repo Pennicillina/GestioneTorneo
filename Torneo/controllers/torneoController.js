@@ -31,9 +31,17 @@ angular.module("torneo")
     	};
 	};
 
-	$scope.data.classifica = storeLocal.getObjectData('classifica');
+	if(storeLocal.getObjectData('classifica') !== null) {
+		$scope.data.classifica = storeLocal.getObjectData('classifica');
+	}
 
-	//$scope.data.partite = storeLocal.getObjectData('partite');
+	if(storeLocal.getObjectData('partite') !== null) {
+		$scope.data.partite = storeLocal.getObjectData('partite');
+	}
+
+	if(storeLocal.getData('activeGame') !== null)  {
+		$scope.data.activeGame = storeLocal.getData('activeGame');
+	}
 
 	$scope.sortedPlayers = $scope.data.classifica.sort(function (a,b) {
 		return b.punteggio - a.punteggio;

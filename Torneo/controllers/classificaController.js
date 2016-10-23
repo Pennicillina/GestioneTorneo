@@ -1,16 +1,16 @@
 angular.module("torneo")
 	.controller("scoreCtrl", function ($scope) {
 
-		$scope.rankingCols = function() {
+		$scope.Score = function() {
+
 			var results = [];
 
-			results.push("Giocatore");
+			for (var i = 0; i < $scope.classifica.length; i++) {
+				for (var j = 1; j < $scope.activeGame) {
+					
+				}
+			}
 
-			// for (var i = 1; i < $scope.data.activeGame + 1; i++) {
-			// 	var colTitle = "Partita " + $scope.data.activeGame;
-			// 	results.push(colTitle); 
-			// }
-
-			return results;			
+			return results;
 		}
 	});
